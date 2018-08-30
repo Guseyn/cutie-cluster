@@ -1,5 +1,5 @@
 {
-  "name": "@guseyn/cutie-cluster",
+  "name": "@cuties/cluster",
   "version": "1.0.0",
   "description": "Cutie extension for cluster module in Node.",
   "main": "index.js",

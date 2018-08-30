@@ -1,5 +1,6 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
+// Represented result is process
 class WorkerProcess extends AsyncObject {
 
   constructor(worker) {
