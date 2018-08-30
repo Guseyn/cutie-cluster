@@ -1,10 +1,11 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 const cluster = require('cluster');
 
+// Represented result is worker
 class WorkerWithMessageEvent extends AsyncObject {
 
   constructor(worker, event) {
-    super();
+    super(worker, event);
   }
 
   // event is an Event with definedBody(msg)

@@ -2,16 +2,18 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 const cluster = require('cluster');
 
 // Represented result is worker
-class ForkedWorker extends AsyncObject {
+class Worker extends AsyncObject {
 
-  constructor(env) {
-    super(env);
+  constructor() {
+    super();
   }
 
   definedSyncCall() {
-    return cluster.fork;
+    return () => {
+      return cluster.worker;
+    }
   }
 
 }
 
-module.exports = ForkedWorker;
+module.exports = Worker;

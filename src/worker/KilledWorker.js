@@ -1,5 +1,6 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
+// Represented result is worker
 class KilledWorker extends AsyncObject {
 
   constructor(worker, signal) {
@@ -8,7 +9,8 @@ class KilledWorker extends AsyncObject {
 
   definedSyncCall() {
     return (worker, signal) => {
-      return worker.kill(signal);
+      worker.kill(signal);
+      return worker;
     }
   }
 

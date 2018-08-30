@@ -1,5 +1,6 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
+// Represented result is boolean
 class IsDead extends AsyncObject {
 
   constructor(worker) {

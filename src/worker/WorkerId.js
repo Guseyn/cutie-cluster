@@ -1,5 +1,6 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
+// Represented result is number
 class WorkerId extends AsyncObject {
 
   constructor(worker) {

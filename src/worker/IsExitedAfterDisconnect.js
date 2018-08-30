@@ -1,7 +1,8 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 const cluster = require('cluster');
 
-class ExitedAfterDisconnect extends AsyncObject {
+// Represented result is boolean
+class IsExitedAfterDisconnect extends AsyncObject {
 
   constructor(worker) {
     super(worker);
@@ -15,4 +16,4 @@ class ExitedAfterDisconnect extends AsyncObject {
 
 }
 
-module.exports = ExitedAfterDisconnect;
+module.exports = IsExitedAfterDisconnect;
