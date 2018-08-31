@@ -18,6 +18,8 @@
     "@cuties/cutie": "1.4.3",
     "@cuties/assert": "1.1.4",
     "@cuties/is": "1.0.6",
+    "@cuties/if-else": "1.0.2",
+    "@cuties/object": "1.0.3",
     "test-executor": "1.1.0"
   },
   "author": "guseyn",
