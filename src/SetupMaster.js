@@ -1,15 +1,14 @@
-const AsyncObject = require('@guseyn/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject;
 
 // Represented result is process
 class SetupMaster extends AsyncObject {
 
-  constructor(setting) {
-    super(setting);
+  constructor(cluster, setting) {
+    super(cluster, setting);
   }
 
   definedSyncCall() {
-    return (setting) => {
+    return (cluster, setting) => {
       cluster.setupMaster(setting);
       return process;
     }

@@ -1,4 +1,4 @@
-const AsyncObject = require('@guseyn/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject;
 const cluster = require('cluster');
 
 // Represented result is object

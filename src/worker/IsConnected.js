@@ -1,4 +1,4 @@
-const AsyncObject = require('@guseyn/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject;
 
 // Represented result is boolean
 class IsConnected extends AsyncObject {

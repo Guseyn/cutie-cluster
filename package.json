@@ -4,7 +4,7 @@
   "description": "Cutie extension for cluster module in Node.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test-executor"
   },
   "repository": {
     "type": "git",
@@ -14,13 +14,19 @@
     "cutie",
     "cluster"
   ],
-  "dependecies": {
-    "@guseyn/cutie": "1.4.0"
+  "dependencies": {
+    "@cuties/cutie": "1.4.3",
+    "@cuties/assert": "1.1.4",
+    "@cuties/is": "1.0.6",
+    "test-executor": "1.1.0"
   },
   "author": "guseyn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Guseyn/cutie-cluster/issues"
   },
-  "homepage": "https://github.com/Guseyn/cutie-cluster#readme"
+  "homepage": "https://github.com/Guseyn/cutie-cluster#readme",
+  "directories": {
+    "test": "test"
+  }
 }
