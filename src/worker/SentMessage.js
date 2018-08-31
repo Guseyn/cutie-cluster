@@ -1,4 +1,4 @@
-const AsyncObject = require('@guseyn/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject;
 
 // Represented result is message
 class SentMessage extends AsyncObject {
@@ -17,4 +17,4 @@ class SentMessage extends AsyncObject {
 
 }
 
-module.exports = KilledWorker;
+module.exports = SentMessage;

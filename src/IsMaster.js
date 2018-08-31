@@ -1,15 +1,14 @@
-const AsyncObject = require('@guseyn/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject;
 
 // Represented result is boolean
 class IsMaster extends AsyncObject {
 
-  constructor() {
-    super();
+  constructor(cluster) {
+    super(cluster);
   }
 
   definedSyncCall() {
-    return () => {
+    return (cluster) => {
       return cluster.isMaster;
     }
   }
