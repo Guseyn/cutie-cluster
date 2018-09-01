@@ -18,6 +18,7 @@ const {
 } = require('./../../index');
 
 const cluster = require('cluster');
+const WorkerClass = require('cluster').Worker;
 
 class DisconnectEvent extends Event {
 
@@ -26,7 +27,7 @@ class DisconnectEvent extends Event {
   }
 
   definedBody(worker) {
-    new Assertion(new Is(worker, Object)).call();
+    new Assertion(new Is(worker, WorkerClass)).call();
   }
 
 }

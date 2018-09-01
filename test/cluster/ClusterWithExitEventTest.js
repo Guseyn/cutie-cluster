@@ -20,6 +20,7 @@ const {
 } = require('./../../index');
 
 const cluster = require('cluster');
+const WorkerClass = require('cluster').Worker;
 
 class ExitEvent extends Event {
 
@@ -29,7 +30,7 @@ class ExitEvent extends Event {
 
   definedBody(worker, code, signal) {
     new Assertion(
-      new Is(worker, Object)
+      new Is(worker, WorkerClass)
     ).after(
       new Assertion(
         new IsNumber(code)
