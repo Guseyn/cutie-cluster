@@ -6,6 +6,7 @@ const {
 } = require('@cuties/cutie');
 const {
   Assertion,
+  EqualAssertion,
   DeepEqualAssertion
 } = require('@cuties/assert');
 const {
@@ -14,28 +15,31 @@ const {
   IsNull
 } = require('@cuties/is');
 const {
-  If
+  If, Else
 } = require('@cuties/if-else');
 const {
-  ClusterWithForkEvent,
-  ForkedWorker,
+  ClusterWithMessageEvent,
+  IsMaster,
   Worker,
-  DisconnectedCluster,
-  IsMaster
+  ForkedWorker,
+  SentMessage,
+  DisconnectedCluster
 } = require('./../../index');
 
 const cluster = require('cluster');
 const WorkerClass = require('cluster').Worker;
 
-class ForkEvent extends Event {
+class MessageEvent extends Event {
 
   constructor() {
     super();
   }
 
-  definedBody(worker) {
-    new Assertion(
-      new Is(worker, WorkerClass)
+  definedBody(worker, message, handle) {
+    new EqualAssertion(
+      message, 'message'
+    ).after(
+      new DisconnectedCluster(cluster)
     ).call();
   }
 
@@ -44,13 +48,13 @@ class ForkEvent extends Event {
 new If(
   new IsMaster(cluster),
   new DeepEqualAssertion(
-    new ClusterWithForkEvent(cluster, new ForkEvent()),
-    cluster
+    new ClusterWithMessageEvent(
+      cluster, new MessageEvent()
+    ), cluster
   ).after(
-    new Assertion(
-      new Is(new ForkedWorker(cluster), WorkerClass)
-    ).after(
-      new DisconnectedCluster(cluster)
-    )
+    new ForkedWorker(cluster)
+  ),
+  new Else(
+    new SentMessage(new Worker(cluster), 'message')
   )
 ).call();
