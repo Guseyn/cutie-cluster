@@ -12,8 +12,12 @@ const {
   Is
 } = require('@cuties/is');
 const {
+  If, Else
+} = require('@cuties/if-else');
+const {
   ClusterWithDisconnectEvent,
   ForkedWorker,
+  IsMaster,
   DisconnectedCluster
 } = require('./../../index');
 
@@ -32,11 +36,15 @@ class DisconnectEvent extends Event {
 
 }
 
-new ForkedWorker().after(
-  new DeepEqualAssertion(
-    new ClusterWithDisconnectEvent(cluster, new DisconnectEvent()),
-    cluster
-  ).after(
-    new DisconnectedCluster(cluster)
+new If(
+  new IsMaster(cluster),
+  new ForkedWorker(cluster).after(
+    new DeepEqualAssertion(
+      new ClusterWithDisconnectEvent(
+        cluster, new DisconnectEvent()
+      ), cluster
+    ).after(
+      new DisconnectedCluster(cluster)
+    )
   )
 ).call();

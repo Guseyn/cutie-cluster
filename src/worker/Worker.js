@@ -1,15 +1,14 @@
 const AsyncObject = require('@cuties/cutie').AsyncObject;
-const cluster = require('cluster');
 
 // Represented result is worker
 class Worker extends AsyncObject {
 
-  constructor() {
-    super();
+  constructor(cluster) {
+    super(cluster);
   }
 
   definedSyncCall() {
-    return () => {
+    return (cluster) => {
       return cluster.worker;
     }
   }
