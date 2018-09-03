@@ -21,7 +21,7 @@
     "@cuties/if-else": "1.0.2",
     "@cuties/http": "1.2.0",
     "@cuties/object": "1.0.3",
-    "test-executor": "1.1.0"
+    "test-executor": "1.1.1"
   },
   "author": "guseyn",
   "license": "MIT",

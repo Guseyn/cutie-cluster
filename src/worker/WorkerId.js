@@ -8,7 +8,9 @@ class WorkerId extends AsyncObject {
   }
 
   definedSyncCall() {
-    return worker.id;
+    return (worker) => {
+      return worker.id;
+    }
   }
 
 }
