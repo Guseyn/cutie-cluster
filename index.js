@@ -13,7 +13,7 @@ module.exports = {
   ForkedWorker: require('./src/worker/ForkedWorker'),
   IsConnected: require('./src/worker/IsConnected'),
   IsDead: require('./src/worker/IsDead'),
-  IsExitedAfterAfterDisconnect: require('./src/worker/IsExitedAfterDisconnect'),
+  IsExitedAfterDisconnect: require('./src/worker/IsExitedAfterDisconnect'),
   KilledWorker: require('./src/worker/KilledWorker'),
   SentMessage: require('./src/worker/SentMessage'),
   Worker: require('./src/worker/Worker'),
