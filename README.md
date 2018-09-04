@@ -1,4 +1,4 @@
-# cutie-fs
+# cutie-cluster
 
 [![NPM Version][npm-image]][npm-url]
 
