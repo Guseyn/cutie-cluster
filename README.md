@@ -16,7 +16,7 @@ const {
   // Needed async objects here from the table below
 } = require('@cuties/cluster');
 ```
-For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/) for <b>fs</b> module.
+For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/) for <b>cluster</b> module.
 
 ## cluster
 
