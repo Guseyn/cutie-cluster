@@ -1,6 +1,6 @@
 const AsyncObject = require('@cuties/cutie').AsyncObject;
 
-// Represented result is value
+// Represented result is value(number)
 class SchedulingPolicy extends AsyncObject {
 
   constructor(cluster) {
