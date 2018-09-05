@@ -60,7 +60,7 @@ For more information about parameters in the async objects visit [docs of Node](
 | `IsWorker` | `cluster.isWorker` | `cluster` | `boolean` |
 | `SchedulingPolicy` | `cluster.schedulingPolicy` | `cluster` | `number` |
 | `Settings` | `cluster.settings` | `cluster` | `object` |
-| `SetupMaster` | `cluster` | `cluster` | `process` |
+| `SetupMaster` | `cluster` | `cluster, settings` | `process` |
 
 [npm-image]: https://img.shields.io/npm/v/@cuties/cluster.svg
 [npm-url]: https://npmjs.org/package/@cuties/cluster
