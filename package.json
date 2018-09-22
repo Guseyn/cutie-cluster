@@ -1,6 +1,6 @@
 {
   "name": "@cuties/cluster",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cutie extension for cluster module in Node.",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,13 @@
     "cluster"
   ],
   "dependencies": {
-    "@cuties/cutie": "1.4.3",
-    "@cuties/assert": "1.1.4",
-    "@cuties/is": "1.0.6",
-    "@cuties/if-else": "1.0.2",
-    "@cuties/http": "1.2.0",
-    "@cuties/object": "1.0.3",
-    "test-executor": "1.1.1"
+    "@cuties/cutie": "1.4.4",
+    "@cuties/assert": "1.1.5",
+    "@cuties/is": "1.0.8",
+    "@cuties/if-else": "1.0.3",
+    "@cuties/http": "1.2.1",
+    "@cuties/object": "1.0.4",
+    "test-executor": "1.1.2"
   },
   "author": "guseyn",
   "license": "MIT",
