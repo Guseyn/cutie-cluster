@@ -1,6 +1,6 @@
 {
   "name": "@cuties/cluster",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cutie extension for cluster module in Node.",
   "main": "index.js",
   "scripts": {
