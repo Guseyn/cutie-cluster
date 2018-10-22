@@ -28,11 +28,17 @@ new If(
       new ForkedWorker(cluster),
       WorkerClass
     )
-  ).after(
-    new IsBoolean(
-      new IsWorker(cluster)
-    ).after(
-      new DisconnectedCluster(cluster)
+  ),
+  new Else(
+    new Assertion(
+      new IsBoolean(
+        new IsWorker(cluster)
+      )
     )
+  )
+).after(
+  new If(
+    new IsMaster(cluster),
+    new DisconnectedCluster(cluster)
   )
 ).call();

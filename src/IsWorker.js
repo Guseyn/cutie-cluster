@@ -9,7 +9,7 @@ class IsWorker extends AsyncObject {
 
   definedSyncCall() {
     return (cluster) => {
-      return cluster.IsWorker;
+      return cluster.isWorker;
     }
   }
 
