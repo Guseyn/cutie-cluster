@@ -2,38 +2,31 @@
 'use strict'
 
 const {
-  Assertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
-const {
-  Is,
-  IsNumber,
-  IsNull
-} = require('@cuties/is');
+  DeepStrictEqualAssertion
+} = require('@cuties/assert')
 const {
   If
-} = require('@cuties/if-else');
+} = require('@cuties/if-else')
 const {
   Keys
-} = require('@cuties/object');
+} = require('@cuties/object')
 const {
   ClusterWithForkedWorkers,
   Workers,
   DisconnectedCluster,
   IsMaster
-} = require('./../../index');
+} = require('./../../index')
+const numCPUs = require('os').cpus().length
+const cluster = require('cluster')
 
-const numCPUs = require('os').cpus().length;
-const cluster = require('cluster');
-
-let arr = [];
+let arr = []
 for (let i = 1; i <= numCPUs; i++) {
-  arr.push(i + '');
+  arr.push(i + '')
 }
 
 new If(
   new IsMaster(cluster),
-  new DeepEqualAssertion(
+  new DeepStrictEqualAssertion(
     new Keys(
       new Workers(
         new ClusterWithForkedWorkers(cluster, numCPUs)

@@ -1,19 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class IsExitedAfterDisconnect extends AsyncObject {
-
-  constructor(worker) {
-    super(worker);
+  constructor (worker) {
+    super(worker)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker) => {
-      return worker.exitedAfterDisconnect;
+      return worker.exitedAfterDisconnect
     }
   }
-
 }
 
-module.exports = IsExitedAfterDisconnect;
+module.exports = IsExitedAfterDisconnect

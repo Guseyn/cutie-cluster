@@ -1,21 +1,18 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is worker
 class WorkerWithOnlineEvent extends AsyncObject {
-
-  constructor(worker, event) {
-    super(worker, event);
+  constructor (worker, event) {
+    super(worker, event)
   }
 
   // event is an Event with definedBody()
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker, event) => {
-      worker.on('online', event);
-      return worker;
+      worker.on('online', event)
+      return worker
     }
   }
-
 }
 
-module.exports = WorkerWithOnlineEvent;
+module.exports = WorkerWithOnlineEvent

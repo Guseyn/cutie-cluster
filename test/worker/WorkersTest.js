@@ -3,27 +3,25 @@
 
 const {
   Assertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
+  DeepStrictEqualAssertion
+} = require('@cuties/assert')
 const {
   Is
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
-  If, Else
-} = require('@cuties/if-else');
+  If
+} = require('@cuties/if-else')
 const {
   Keys
-} = require('@cuties/object');
+} = require('@cuties/object')
 const {
-  ClusterWithDisconnectEvent,
   ForkedWorker,
   IsMaster,
   DisconnectedCluster,
   Workers
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+} = require('./../../index')
+const cluster = require('cluster')
+const WorkerClass = cluster.Worker
 
 new If(
   new IsMaster(cluster),
@@ -33,11 +31,11 @@ new If(
       WorkerClass
     )
   ).after(
-    new DeepEqualAssertion(
+    new DeepStrictEqualAssertion(
       new Keys(new Workers(cluster)),
       ['1']
     ).after(
       new DisconnectedCluster(cluster)
-    )  
+    )
   )
-).call();
+).call()

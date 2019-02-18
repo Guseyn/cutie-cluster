@@ -1,18 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class IsDead extends AsyncObject {
-
-  constructor(worker) {
-    super(worker);
+  constructor (worker) {
+    super(worker)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker) => {
-      return worker.isDead();
+      return worker.isDead()
     }
   }
-
 }
 
-module.exports = IsDead;
+module.exports = IsDead

@@ -3,40 +3,32 @@
 
 const {
   Event
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
-  Assertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
-const {
-  Is
-} = require('@cuties/is');
+  Assertion
+} = require('@cuties/assert')
 const {
   If, Else
-} = require('@cuties/if-else');
+} = require('@cuties/if-else')
 const {
   WorkerWithDisconnectEvent,
   ForkedWorker,
   Worker,
   IsMaster,
   DisconnectedWorker
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+} = require('./../../index')
+const cluster = require('cluster')
 
 class DisconnectEvent extends Event {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  definedBody() {
+  definedBody () {
     new Assertion(
       true
-    ).call();
+    ).call()
   }
-
 }
 
 new If(
@@ -51,4 +43,4 @@ new If(
       )
     )
   )
-).call();
+).call()

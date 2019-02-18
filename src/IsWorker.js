@@ -1,18 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class IsWorker extends AsyncObject {
-
-  constructor(cluster) {
-    super(cluster);
+  constructor (cluster) {
+    super(cluster)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (cluster) => {
-      return cluster.isWorker;
+      return cluster.isWorker
     }
   }
-
 }
 
-module.exports = IsWorker;
+module.exports = IsWorker

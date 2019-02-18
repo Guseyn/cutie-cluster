@@ -1,19 +1,17 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is worker
 class KilledWorker extends AsyncObject {
-
-  constructor(worker, signal) {
-    super(worker, signal || 'SIGTERM');
+  constructor (worker, signal) {
+    super(worker, signal || 'SIGTERM')
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker, signal) => {
-      worker.kill(signal);
-      return worker;
+      worker.kill(signal)
+      return worker
     }
   }
-
 }
 
-module.exports = KilledWorker;
+module.exports = KilledWorker

@@ -1,18 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is number
 class WorkerId extends AsyncObject {
-
-  constructor(worker) {
-    super(worker);
+  constructor (worker) {
+    super(worker)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker) => {
-      return worker.id;
+      return worker.id
     }
   }
-
 }
 
-module.exports = WorkerId;
+module.exports = WorkerId

@@ -3,20 +3,18 @@
 
 const {
   Event
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
   Assertion,
-  EqualAssertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
+  StrictEqualAssertion,
+  DeepStrictEqualAssertion
+} = require('@cuties/assert')
 const {
-  Is,
-  IsString,
-  IsNull
-} = require('@cuties/is');
+  IsString
+} = require('@cuties/is')
 const {
   If, Else
-} = require('@cuties/if-else');
+} = require('@cuties/if-else')
 const {
   ClusterWithMessageEvent,
   IsMaster,
@@ -24,30 +22,26 @@ const {
   ForkedWorker,
   SentMessage,
   DisconnectedCluster
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+} = require('./../../index')
+const cluster = require('cluster')
 
 class MessageEvent extends Event {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  definedBody(worker, message, handle) {
-    new EqualAssertion(
+  definedBody (worker, message, handle) {
+    new StrictEqualAssertion(
       message, 'message'
     ).after(
       new DisconnectedCluster(cluster)
-    ).call();
+    ).call()
   }
-
 }
 
 new If(
   new IsMaster(cluster),
-  new DeepEqualAssertion(
+  new DeepStrictEqualAssertion(
     new ClusterWithMessageEvent(
       cluster, new MessageEvent()
     ), cluster
@@ -61,4 +55,4 @@ new If(
       )
     )
   )
-).call();
+).call()

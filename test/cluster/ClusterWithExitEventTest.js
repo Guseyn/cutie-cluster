@@ -3,36 +3,34 @@
 
 const {
   Event
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
   Assertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
+  DeepStrictEqualAssertion
+} = require('@cuties/assert')
 const {
   Is,
   IsNumber,
   IsNull
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
-  If, Else
-} = require('@cuties/if-else');
+  If
+} = require('@cuties/if-else')
 const {
   ClusterWithExitEvent,
   ForkedWorker,
   DisconnectedCluster,
   IsMaster
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+} = require('./../../index')
+const cluster = require('cluster')
+const WorkerClass = cluster.Worker
 
 class ExitEvent extends Event {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  definedBody(worker, code, signal) {
+  definedBody (worker, code, signal) {
     new Assertion(
       new Is(worker, WorkerClass)
     ).after(
@@ -43,15 +41,14 @@ class ExitEvent extends Event {
           new IsNull(signal)
         )
       )
-    ).call();
+    ).call()
   }
-
 }
 
 new If(
   new IsMaster(cluster),
   new ForkedWorker(cluster).after(
-    new DeepEqualAssertion(
+    new DeepStrictEqualAssertion(
       new ClusterWithExitEvent(
         cluster, new ExitEvent()
       ), cluster
@@ -59,4 +56,4 @@ new If(
       new DisconnectedCluster(cluster)
     )
   )
-).call();
+).call()
