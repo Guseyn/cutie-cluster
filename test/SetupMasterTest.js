@@ -2,14 +2,13 @@
 'use strict'
 
 const {
-  DeepEqualAssertion
-} = require('@cuties/assert');
+  DeepStrictEqualAssertion
+} = require('@cuties/assert')
 const {
   SetupMaster
-} = require('./../index');
+} = require('./../index')
+const cluster = require('cluster')
 
-const cluster = require('cluster');
-
-new DeepEqualAssertion(
+new DeepStrictEqualAssertion(
   new SetupMaster(cluster), process
-).call();
+).call()

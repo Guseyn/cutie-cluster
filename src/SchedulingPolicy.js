@@ -1,18 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is value(number)
 class SchedulingPolicy extends AsyncObject {
-
-  constructor(cluster) {
-    super(cluster);
+  constructor (cluster) {
+    super(cluster)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (cluster) => {
-      return cluster.schedulingPolicy;
+      return cluster.schedulingPolicy
     }
   }
-
 }
 
-module.exports = SchedulingPolicy;
+module.exports = SchedulingPolicy

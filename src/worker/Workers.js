@@ -1,18 +1,16 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is object
 class Workers extends AsyncObject {
-
-  constructor(cluster) {
-    super(cluster);
+  constructor (cluster) {
+    super(cluster)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (cluster) => {
-      return cluster.workers;
+      return cluster.workers
     }
   }
-
 }
 
-module.exports = Workers;
+module.exports = Workers

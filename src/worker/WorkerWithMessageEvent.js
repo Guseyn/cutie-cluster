@@ -1,21 +1,18 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is worker
 class WorkerWithMessageEvent extends AsyncObject {
-
-  constructor(worker, event) {
-    super(worker, event);
+  constructor (worker, event) {
+    super(worker, event)
   }
 
   // event is an Event with definedBody(msg)
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker, event) => {
-      worker.on('message', event);
-      return worker;
+      worker.on('message', event)
+      return worker
     }
   }
-
 }
 
-module.exports = WorkerWithMessageEvent;
+module.exports = WorkerWithMessageEvent

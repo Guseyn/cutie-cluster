@@ -4,7 +4,8 @@
   "description": "Cutie extension for cluster module in Node.",
   "main": "index.js",
   "scripts": {
-    "test": "node test-executor"
+    "test": "node test-executor",
+    "build": "node build"
   },
   "repository": {
     "type": "git",
@@ -15,13 +16,13 @@
     "cluster"
   ],
   "dependencies": {
-    "@cuties/cutie": "1.4.4",
-    "@cuties/assert": "1.1.5",
-    "@cuties/is": "1.0.8",
-    "@cuties/if-else": "1.0.3",
-    "@cuties/http": "1.2.1",
-    "@cuties/object": "1.0.4",
-    "test-executor": "1.1.2"
+    "@cuties/assert": "^1.1.11",
+    "@cuties/cutie": "^1.6.8",
+    "@cuties/if-else": "^1.0.7",
+    "@cuties/is": "^1.0.14",
+    "@cuties/object": "^1.0.10",
+    "@cuties/wall": "^1.0.19",
+    "test-executor": "^1.1.34"
   },
   "author": "guseyn",
   "license": "MIT",
@@ -31,5 +32,13 @@
   "homepage": "https://github.com/Guseyn/cutie-cluster#readme",
   "directories": {
     "test": "test"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }

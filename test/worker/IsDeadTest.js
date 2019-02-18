@@ -3,26 +3,24 @@
 
 const {
   as
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
   Assertion
-} = require('@cuties/assert');
+} = require('@cuties/assert')
 const {
   Is, IsBoolean
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
-  If, Else
-} = require('@cuties/if-else');
+  If
+} = require('@cuties/if-else')
 const {
-  ClusterWithDisconnectEvent,
   ForkedWorker,
   IsMaster,
   DisconnectedCluster,
   IsDead
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+} = require('./../../index')
+const cluster = require('cluster')
+const WorkerClass = cluster.Worker
 
 new If(
   new IsMaster(cluster),
@@ -40,4 +38,4 @@ new If(
       new DisconnectedCluster(cluster)
     )
   )
-).call();
+).call()

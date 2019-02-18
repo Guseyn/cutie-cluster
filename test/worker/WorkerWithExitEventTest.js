@@ -2,46 +2,41 @@
 'use strict'
 
 const {
-  AsyncObject, Event
-} = require('@cuties/cutie');
+  Event
+} = require('@cuties/cutie')
 const {
-  Assertion,
-  DeepEqualAssertion
-} = require('@cuties/assert');
+  Assertion
+} = require('@cuties/assert')
 const {
   Is, IsNumber, IsNull
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
   If, Else
-} = require('@cuties/if-else');
+} = require('@cuties/if-else')
 const {
   WorkerWithExitEvent,
   ForkedWorker,
   Worker,
   IsMaster,
-  DisconnectedWorker,
-  KilledWorker
-} = require('./../../index');
-
-const cluster = require('cluster');
-const WorkerClass = require('cluster').Worker;
+  DisconnectedWorker
+} = require('./../../index')
+const cluster = require('cluster')
+const WorkerClass = cluster.Worker
 
 class ExitEvent extends Event {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  definedBody(code, signal) {
+  definedBody (code, signal) {
     new Assertion(
       new IsNumber(code)
     ).after(
       new Assertion(
         new IsNull(signal)
       )
-    ).call();
+    ).call()
   }
-
 }
 
 new If(
@@ -59,4 +54,4 @@ new If(
       new Worker(cluster)
     )
   )
-).call();
+).call()

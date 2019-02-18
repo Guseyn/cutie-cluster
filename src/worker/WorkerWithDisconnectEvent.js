@@ -1,20 +1,18 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is worker
 class WorkerWithDisconnectEvent extends AsyncObject {
-
-  constructor(worker, event) {
-    super(worker, event);
+  constructor (worker, event) {
+    super(worker, event)
   }
 
   // event is an Event with definedBody()
-  definedSyncCall() {
+  definedSyncCall () {
     return (worker, event) => {
-      worker.on('disconnect', event);
-      return worker;
+      worker.on('disconnect', event)
+      return worker
     }
   }
-
 }
 
-module.exports = WorkerWithDisconnectEvent;
+module.exports = WorkerWithDisconnectEvent

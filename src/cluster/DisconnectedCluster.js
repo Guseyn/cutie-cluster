@@ -1,24 +1,21 @@
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const cluster = require('cluster');
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is cluster
 class DisconnectedCluster extends AsyncObject {
-
-  constructor(cluster) {
-    super(cluster);
+  constructor (cluster) {
+    super(cluster)
   }
 
-  definedAsyncCall() {
+  definedAsyncCall () {
     return (cluster, callback) => {
-      this.cluster = cluster;
-      cluster.disconnect(callback);
+      this.cluster = cluster
+      cluster.disconnect(callback)
     }
   }
 
-  onResult() {
-    return this.cluster;
+  onResult () {
+    return this.cluster
   }
-
 }
 
-module.exports = DisconnectedCluster;
+module.exports = DisconnectedCluster
