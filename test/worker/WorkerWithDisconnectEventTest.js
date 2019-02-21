@@ -24,7 +24,7 @@ class DisconnectEvent extends Event {
     super()
   }
 
-  definedBody () {
+  body () {
     new Assertion(
       true
     ).call()

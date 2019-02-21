@@ -6,8 +6,8 @@ class ClusterWithMessageEvent extends AsyncObject {
     super(cluster, event)
   }
 
-  // event is an Event with definedBody(worker, message, handle)
-  definedSyncCall () {
+  // event is an Event with body(worker, message, handle)
+  syncCall () {
     return (cluster, event) => {
       cluster.on('message', event)
       return cluster

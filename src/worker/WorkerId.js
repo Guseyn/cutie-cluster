@@ -6,7 +6,7 @@ class WorkerId extends AsyncObject {
     super(worker)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (worker) => {
       return worker.id
     }

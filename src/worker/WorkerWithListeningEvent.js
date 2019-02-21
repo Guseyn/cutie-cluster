@@ -6,8 +6,8 @@ class WorkerWithListeningEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody(address)
-  definedSyncCall () {
+  // event is an Event with body(address)
+  syncCall () {
     return (worker, event) => {
       worker.on('listening', event)
       return worker

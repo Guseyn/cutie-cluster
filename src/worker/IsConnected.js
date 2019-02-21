@@ -6,7 +6,7 @@ class IsConnected extends AsyncObject {
     super(worker)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (worker) => {
       return worker.isConnected()
     }

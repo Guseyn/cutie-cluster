@@ -6,8 +6,8 @@ class WorkerWithDisconnectEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody()
-  definedSyncCall () {
+  // event is an Event with body()
+  syncCall () {
     return (worker, event) => {
       worker.on('disconnect', event)
       return worker

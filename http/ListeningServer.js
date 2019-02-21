@@ -8,7 +8,7 @@ class ListeningServer extends AsyncObject {
     super(server, ...args)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (server, ...args) => {
       return server.listen(...args)
     }

@@ -30,7 +30,7 @@ class ExitEvent extends Event {
     super()
   }
 
-  definedBody (worker, code, signal) {
+  body (worker, code, signal) {
     new Assertion(
       new Is(worker, WorkerClass)
     ).after(

@@ -29,7 +29,7 @@ class ListeningEvent extends Event {
     super()
   }
 
-  definedBody (address) {
+  body (address) {
     new DeepStrictEqualAssertion(
       { address: address.address, port: address.port },
       { address: '127.0.0.1', port: 8125 }

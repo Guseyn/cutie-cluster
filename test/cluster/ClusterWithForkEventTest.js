@@ -28,7 +28,7 @@ class ForkEvent extends Event {
     super()
   }
 
-  definedBody (worker) {
+  body (worker) {
     new Assertion(
       new Is(worker, WorkerClass)
     ).call()

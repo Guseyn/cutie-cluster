@@ -6,7 +6,7 @@ class KilledWorker extends AsyncObject {
     super(worker, signal || 'SIGTERM')
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (worker, signal) => {
       worker.kill(signal)
       return worker

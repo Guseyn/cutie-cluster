@@ -28,7 +28,7 @@ class OnlineEvent extends Event {
     super()
   }
 
-  definedBody (worker) {
+  body (worker) {
     new Assertion(
       new Is(worker, WorkerClass)
     ).after(

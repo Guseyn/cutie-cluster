@@ -6,7 +6,7 @@ class ForkedWorker extends AsyncObject {
     super(cluster, env)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (cluster, env) => {
       return cluster.fork(env)
     }

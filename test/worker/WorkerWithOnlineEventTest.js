@@ -27,7 +27,7 @@ class OnlineEvent extends Event {
     super()
   }
 
-  definedBody () {
+  body () {
     new Assertion(
       true
     ).after(

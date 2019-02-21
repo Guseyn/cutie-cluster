@@ -6,7 +6,7 @@ class ClusterWithForkedWorkers extends AsyncObject {
     super(cluster, num, env)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (cluster, num, env) => {
       for (let i = 0; i < num; i++) {
         cluster.fork(env)
