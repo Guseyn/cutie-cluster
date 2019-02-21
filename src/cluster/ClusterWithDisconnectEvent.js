@@ -6,8 +6,8 @@ class ClusterWithDisconnectEvent extends AsyncObject {
     super(cluster, event)
   }
 
-  // event is an Event with definedBody(worker)
-  definedSyncCall () {
+  // event is an Event with body(worker)
+  syncCall () {
     return (cluster, event) => {
       cluster.on('disconnect', event)
       return cluster

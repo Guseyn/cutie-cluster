@@ -6,8 +6,8 @@ class ClusterWithExitEvent extends AsyncObject {
     super(cluster, event)
   }
 
-  // event is an Event with definedBody(worker, code, signal)
-  definedSyncCall () {
+  // event is an Event with body(worker, code, signal)
+  syncCall () {
     return (cluster, event) => {
       cluster.on('exit', event)
       return cluster

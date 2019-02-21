@@ -28,7 +28,7 @@ class ExitEvent extends Event {
     super()
   }
 
-  definedBody (code, signal) {
+  body (code, signal) {
     new Assertion(
       new IsNumber(code)
     ).after(

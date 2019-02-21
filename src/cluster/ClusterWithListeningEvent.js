@@ -6,8 +6,8 @@ class ClusterWithListeningEvent extends AsyncObject {
     super(cluster, event)
   }
 
-  // event is an Event with definedBody(worker, address)
-  definedSyncCall () {
+  // event is an Event with body(worker, address)
+  syncCall () {
     return (cluster, event) => {
       cluster.on('listening', event)
       return cluster

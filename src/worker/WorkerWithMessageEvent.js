@@ -6,8 +6,8 @@ class WorkerWithMessageEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody(msg)
-  definedSyncCall () {
+  // event is an Event with body(msg)
+  syncCall () {
     return (worker, event) => {
       worker.on('message', event)
       return worker

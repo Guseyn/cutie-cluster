@@ -6,8 +6,8 @@ class WorkerWithErrorEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody(error)
-  definedSyncCall () {
+  // event is an Event with body(error)
+  syncCall () {
     return (worker, event) => {
       worker.on('error', event)
       return worker

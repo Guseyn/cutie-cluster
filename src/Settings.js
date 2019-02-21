@@ -6,7 +6,7 @@ class Settings extends AsyncObject {
     super(cluster)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (cluster) => {
       return cluster.settings
     }

@@ -6,7 +6,7 @@ class DisconnectedWorker extends AsyncObject {
     super(worker)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (worker) => {
       worker.disconnect()
       return worker

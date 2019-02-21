@@ -29,7 +29,7 @@ class ListeningEvent extends Event {
     super()
   }
 
-  definedBody (worker, address) {
+  body (worker, address) {
     new Assertion(
       new Is(worker, WorkerClass)
     ).after(

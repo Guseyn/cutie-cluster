@@ -6,8 +6,8 @@ class ClusterWithForkEvent extends AsyncObject {
     super(cluster, event)
   }
 
-  // event is an Event with definedBody(worker)
-  definedSyncCall () {
+  // event is an Event with body(worker)
+  syncCall () {
     return (cluster, event) => {
       cluster.on('fork', event)
       return cluster

@@ -6,8 +6,8 @@ class WorkerWithOnlineEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody()
-  definedSyncCall () {
+  // event is an Event with body()
+  syncCall () {
     return (worker, event) => {
       worker.on('online', event)
       return worker

@@ -6,8 +6,8 @@ class WorkerWithExitEvent extends AsyncObject {
     super(worker, event)
   }
 
-  // event is an Event with definedBody(code, signal)
-  definedSyncCall () {
+  // event is an Event with body(code, signal)
+  syncCall () {
     return (worker, event) => {
       worker.on('exit', event)
       return worker

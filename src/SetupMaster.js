@@ -6,7 +6,7 @@ class SetupMaster extends AsyncObject {
     super(cluster, setting)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (cluster, setting) => {
       cluster.setupMaster(setting)
       return process

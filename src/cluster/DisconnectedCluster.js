@@ -6,7 +6,7 @@ class DisconnectedCluster extends AsyncObject {
     super(cluster)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (cluster, callback) => {
       this.cluster = cluster
       cluster.disconnect(callback)

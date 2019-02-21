@@ -30,7 +30,7 @@ class MessageEvent extends Event {
     super()
   }
 
-  definedBody (worker, message, handle) {
+  body (worker, message, handle) {
     new StrictEqualAssertion(
       message, 'message'
     ).after(

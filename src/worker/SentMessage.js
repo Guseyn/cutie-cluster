@@ -7,7 +7,7 @@ class SentMessage extends AsyncObject {
     super(worker, message, ...args)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (worker, message, ...args) => {
       this.message = message
       worker.send(message, ...args)
