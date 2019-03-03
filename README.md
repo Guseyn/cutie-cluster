@@ -43,6 +43,7 @@ For more information about parameters in the async objects visit [docs of Node](
 | `ClusterWithListeningEvent` | `cluster.on('listening', event)` | `cluster, event (Event with definedBody(worker, address))` | `cluster` |
 | `ClusterWithMessageEvent` | `cluster.on('message', event)` | `cluster, event (Event with definedBody(worker, message, handle))` | `cluster` |
 | `ClusterWithOnlineEvent` | `cluster.on('online', event)` | `cluster, event (Event with definedBody(worker))` | `cluster` |
+| `HasWorkers` | `Object.keys(cluster.workers) > 0` | `cluster` | `boolean` |
 
 ## worker
 
@@ -58,13 +59,13 @@ For more information about parameters in the async objects visit [docs of Node](
 | `Worker` | `cluster.worker` | `cluster` | `worker` |
 | `WorkerId` | `worker.id` | `worker` | `number` |
 | `WorkerProcess` | `worker.process` | `worker` | `process` |
+| `Workers` | `cluster.workers` | `cluster` | `object` |
 | `WorkerWithDisconnectEvent` | `worker.on('disconnect', event)` | `worker, event(Event with definedBody())` | `worker` |
 | `WorkerWithErrorEvent` | `worker.on('error', event)` | `worker, event(Event with definedBody(error))` | `worker` |
 | `WorkerWithExitEvent` | `worker.on('exit', event)` | `worker, event(Event with definedBody(code, signal))` | `worker` |
 | `WorkerWithListeningEvent` | `worker.on('listening', event)` | `worker, event(Event with definedBody(address))` | `worker` |
 | `WorkerWithMessageEvent` | `worker.on('message', event)` | `worker, event(Event with definedBody(msg))` | `worker` |
 | `WorkerWithOnlineEvent` | `worker.on('online', event)` | `worker, event (Event with definedBody())` | `worker` |
-| `Workers` | `cluster.workers` | `cluster` | `object` |
 
 ## common
 
