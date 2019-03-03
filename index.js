@@ -8,6 +8,7 @@ module.exports = {
   ClusterWithMessageEvent: require('./src/cluster/ClusterWithMessageEvent'),
   ClusterWithOnlineEvent: require('./src/cluster/ClusterWithOnlineEvent'),
   DisconnectedCluster: require('./src/cluster/DisconnectedCluster'),
+  HasWorkers: require('./src/cluster/HasWorkers'),
 
   DisconnectedWorker: require('./src/worker/DisconnectedWorker'),
   ForkedWorker: require('./src/worker/ForkedWorker'),
